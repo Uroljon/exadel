@@ -470,6 +470,109 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "obligatory",
+			"item": [
+				{
+					"name": "POST create obligatory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"UTILITIES\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/obligatory/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obligatory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE obligatory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/obligatory/123_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obligatory",
+								"123_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET obligatory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/obligatory/123_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obligatory",
+								"123_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT update obligatory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"newUpdatedObligatory\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/obligatory/123_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obligatory",
+								"123_id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
