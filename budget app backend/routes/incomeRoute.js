@@ -1,13 +1,12 @@
+const { income_GET, income_POST, income_PUT, income_DELETE } = require("../controllers/income_controller");
+
 const router = require("express").Router();
 
-// create income
-router.post("/add", (req, res) => {
-    const {title} = req.body; //there will be other fields, like income_amount
-    res.status(200).json({
-        ok: true,
-        message: `${title} income has been created`
-    })
-})
+// CRUD income
+router.post("/", income_POST)
+router.get("/:id", income_GET)
+router.put("/:id", income_PUT)
+router.delete("/:id", income_DELETE)
 
 module.exports = {
     endpoint: "/income",
