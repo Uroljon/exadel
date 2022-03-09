@@ -1,5 +1,5 @@
 module.exports = class{
-    static login_POST(req, res){
+    static login(req, res){
         const { email, password } = req.body;
         // logic : check email and password 
         let verified = true
@@ -17,7 +17,7 @@ module.exports = class{
             })
         }
     }
-    static logout_POST(req, res){
+    static logout(req, res){
         // logic : remove cookie to break session
         // res.clearCookie("token")
     
