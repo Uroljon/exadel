@@ -1,21 +1,12 @@
+const { category_POST, category_DELETE, category_PUT, category_GET } = require("../controllers/category_controller");
+
 const router = require("express").Router();
 
-// create category
-router.post("/", (req, res) => {
-    const {title} = req.body;
-    res.status(200).json({
-        ok: true,
-        message: `${title} category has been created`
-    })
-})
-// delete category
-router.delete("/:category_name", (req, res) => {
-    res.status(200).json({
-        ok: true,
-        message: `${req.params.category_name} got deleted!`
-    })
-   
-})
+// CRUD category
+router.post("/", category_POST)
+router.get("/:id", category_GET)
+router.put("/:id", category_PUT)
+router.delete("/:id", category_DELETE)
 
 module.exports = {
     endpoint: "/category",
