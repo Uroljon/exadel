@@ -13,14 +13,14 @@ module.exports = class {
             if (user.password === password) {
                 let token = create_token({
                     email,
-                    role: user.role
+                    role: user.role,
                 })
                 // res.cookie("auth", token) //I'm setting jwt token to cookie
 
                 res.status(201).json({
                     ok: true,
                     user,
-                    message: `Welcome ${email} [${password}]!`
+                    token
                 })
             } else {
                 res.status(403).json({
