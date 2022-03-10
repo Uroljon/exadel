@@ -1,25 +1,24 @@
 module.exports = class {
-    static category_GET(req, res) {
-        if(req.params.id === "all"){
-            res.status(200).json({
-                ok: true,
-                message: `All category GET!`
-            })
-        }else{
-            res.status(200).json({
-                ok: true,
-                message: `${req.params.id} category has been requested`
-            })
-        }
+    static get_all_categories(req, res) {
+        res.status(200).json({
+            ok: true,
+            message: `All category GET!`
+        })
     }
-    static category_POST(req, res) {
+    static get_category_by_id(req, res) {
+        res.status(200).json({
+            ok: true,
+            message: `${req.params.id} category has been requested`
+        })
+    }
+    static create_category(req, res) {
         const { title } = req.body; //there will be other fields, like category_amount
         res.status(201).json({
             ok: true,
             message: `${title} category has been created`
         })
     }
-    static category_PUT(req, res) {
+    static update_category(req, res) {
         const { title } = req.body; //there will be other fields, like category_amount
 
         res.status(200).json({
@@ -27,7 +26,7 @@ module.exports = class {
             message: `${req.params.id} category has been updated with new title : ${title}`
         })
     }
-    static category_DELETE(req, res) {
+    static delete_category(req, res) {
         res.status(200).json({
             ok: true,
             message: `${req.params.id} category has been deleted`

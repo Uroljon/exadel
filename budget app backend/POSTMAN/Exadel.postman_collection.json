@@ -92,7 +92,27 @@
 					"response": []
 				},
 				{
-					"name": "GETaccounts",
+					"name": "GET account by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/account/123_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account",
+								"123_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all accounts",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -224,7 +244,7 @@
 					"response": []
 				},
 				{
-					"name": "GET income",
+					"name": "GET income by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -238,6 +258,26 @@
 							"path": [
 								"income",
 								"123_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all income",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/income/al",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"income",
+								"al"
 							]
 						}
 					},
@@ -269,7 +309,27 @@
 			"name": "expanse",
 			"item": [
 				{
-					"name": "GET expanse",
+					"name": "GET expanse by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expanse/123_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expanse",
+								"123_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all expanses",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -421,7 +481,7 @@
 					"response": []
 				},
 				{
-					"name": "GET category",
+					"name": "GET category by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -435,6 +495,26 @@
 							"path": [
 								"category",
 								"123_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/category/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"all"
 							]
 						}
 					},
@@ -524,7 +604,7 @@
 					"response": []
 				},
 				{
-					"name": "GET obligatory",
+					"name": "GET obligatory by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -538,6 +618,26 @@
 							"path": [
 								"obligatory",
 								"123_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all obligatories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/obligatory/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obligatory",
+								"all"
 							]
 						}
 					},

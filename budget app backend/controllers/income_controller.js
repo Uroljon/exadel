@@ -1,25 +1,24 @@
 module.exports = class {
-    static income_GET(req, res) {
-        if(req.params.id === "all"){
-            res.status(200).json({
-                ok: true,
-                message: `All income GET!`
-            })
-        }else{
-            res.status(200).json({
-                ok: true,
-                message: `${req.params.id} income has been requested`
-            })
-        }
+    static get_all_income(req, res) {
+        res.status(200).json({
+            ok: true,
+            message: `All income GET!`
+        })
     }
-    static income_POST(req, res) {
+    static get_income_by_id(req, res) {
+        res.status(200).json({
+            ok: true,
+            message: `${req.params.id} income has been requested`
+        })
+    }
+    static create_income(req, res) {
         const { title } = req.body; //there will be other fields, like income_amount
         res.status(201).json({
             ok: true,
             message: `${title} income has been created`
         })
     }
-    static income_PUT(req, res) {
+    static update_income(req, res) {
         const { title } = req.body; //there will be other fields, like income_amount
 
         res.status(200).json({
@@ -27,7 +26,7 @@ module.exports = class {
             message: `${req.params.id} income has been updated with new title : ${title}`
         })
     }
-    static income_DELETE(req, res) {
+    static delete_income(req, res) {
         res.status(200).json({
             ok: true,
             message: `${req.params.id} income has been deleted`

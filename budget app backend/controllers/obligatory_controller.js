@@ -1,25 +1,24 @@
 module.exports = class {
-    static obligatory_GET(req, res) {
-        if(req.params.id === "all"){
-            res.status(200).json({
-                ok: true,
-                message: `All obligatory GET!`
-            })
-        }else{
-            res.status(200).json({
-                ok: true,
-                message: `${req.params.id} obligatory has been requested`
-            })
-        }
+    static get_all_obligatories(req, res) {
+        res.status(200).json({
+            ok: true,
+            message: `All obligatory GET!`
+        })
     }
-    static obligatory_POST(req, res) {
+    static get_obligatory_by_id(req, res) {
+        res.status(200).json({
+            ok: true,
+            message: `${req.params.id} obligatory has been requested`
+        })
+    }
+    static create_obligatory(req, res) {
         const { title } = req.body; //there will be other fields, like obligatory_amount
         res.status(201).json({
             ok: true,
             message: `${title} obligatory has been created`
         })
     }
-    static obligatory_PUT(req, res) {
+    static update_obligatory(req, res) {
         const { title } = req.body; //there will be other fields, like obligatory_amount
 
         res.status(200).json({
@@ -27,7 +26,7 @@ module.exports = class {
             message: `${req.params.id} obligatory has been updated with new title : ${title}`
         })
     }
-    static obligatory_DELETE(req, res) {
+    static delete_obligatory(req, res) {
         res.status(200).json({
             ok: true,
             message: `${req.params.id} obligatory has been deleted`
