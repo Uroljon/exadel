@@ -1,6 +1,7 @@
 module.exports = function (req, res, next) {
     // check whether user has admin token on its cookie
-    let users = require("../mock_data/users.js")
+    let token = req.headers.token;
+    
     console.log(req.headers)
     if(false){
         res.json({

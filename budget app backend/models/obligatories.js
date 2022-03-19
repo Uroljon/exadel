@@ -25,4 +25,4 @@ const obligatorySchema = new mongoose.Schema({
 obligatorySchema.post("save", function (doc) {
     console.log(`${doc.email} has been saved`)
 })
-module.exports = mongoose.model("Users", obligatorySchema)
+module.exports = mongoose.model("Obligatories", obligatorySchema)

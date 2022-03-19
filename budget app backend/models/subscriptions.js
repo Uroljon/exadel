@@ -29,4 +29,4 @@ const subscriptionSchema = new mongoose.Schema({
 subscriptionSchema.post("save", function (doc) {
     console.log(`${doc.email} has been saved`)
 })
-module.exports = mongoose.model("Users", subscriptionSchema)
+module.exports = mongoose.model("Subscriptions", subscriptionSchema)

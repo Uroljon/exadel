@@ -1,53 +1,77 @@
 const users = require("../models/users");
+const accounts = require("../models/accounts");
 const mongoose = require("mongoose")
 
 module.exports = class {
     static async get_all_accounts(req, res) {
-        const { user_id } = req.body
-        const accounts = await users.findById(user_id)
-
+        const results = await accounts.find({
+            user_id: req.cookies.user_id
+        })
         res.status(200).json({
             ok: true,
-            accounts,
-            message: `All accounts GET!`
+            accounts: results,
+            message: `All accounts of user (${req.cookies.user_id})`
         })
     }
     static async get_account_by_id(req, res) {
+        const result = await accounts.findById(req.params.id)
         res.status(200).json({
             ok: true,
-            message: `${req.params.id} account GET!`
+            account: result,
+            message: `${req.params.id} account details sent.`
         })
     }
     static async create_account(req, res) {
-        const { title, currency } = req.body;
-        let a = await users.findOneAndUpdate({
-            email: "uroljon@exadel.com"
-        }, {
-            accounts: {
-                id: new mongoose.Types.ObjectId(),
-                title: "credit card",
-                amount: 500,
-                currency: "$",
-                description: "just my credit card"
-            }
-        })
-        res.status(201).json({
-            ok: true,
-            message: `${title} account has been created with ${currency} currency`
-        })
+        const { user_id } = req.cookies;
+        const { title, amount, currency, description } = req.body;
+        try {
+            const created = await accounts.create({
+                user_id: new mongoose.Types.ObjectId(user_id),
+                title,
+                amount,
+                currency,
+                description
+            })
+    
+            res.status(201).json({
+                ok: true,
+                created,
+                message: `${title} account has been created.`
+            })
+        } catch (error) {
+            res.status(403).json({
+                ok: "false",
+                message: `Duplicate entry violation: ${user_id} + ${title}`
+            })
+        }
     }
     static async update_account(req, res) {
-        const { currency } = req.body;
-        res.status(200).json({
-            ok: true,
-            message: `${req.params.id} account has been updated with ${currency} currency`
-        })
+        const { title, amount, currency, description } = req.body;
+        try {
+            let updated = await accounts.findByIdAndUpdate(req.params.id, {
+                title,
+                amount,
+                currency,
+                description
+            })
+            res.status(200).json({
+                ok: true,
+                updated,
+                message: `${req.params.id} account has been updated.`
+            })
+        } catch (error) {
+            res.json({
+                ok: false,
+                message: error + ""
+            })
+        }
     }
     static async delete_account(req, res) {
-        const { id, currency } = req.params;
+        const deleted = await accounts.findByIdAndDelete(req.params.id)
         res.status(200).json({
             ok: true,
-            message: `${id} account has been deleted`
+            deleted,
+            message: `${req.params.id} account has been deleted`
         })
     }
 }
