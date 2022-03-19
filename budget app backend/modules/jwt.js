@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config");
 
 module.exports.create_token = function (payload) {
-    return "Bearer " + jwt.sign(payload, JWT_SECRET)
+    return jwt.sign(payload, JWT_SECRET)
 }
 
 // since I'm using passport.js I don't need verify function
