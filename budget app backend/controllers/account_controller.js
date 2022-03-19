@@ -1,4 +1,3 @@
-const users = require("../models/users");
 const accounts = require("../models/accounts");
 const mongoose = require("mongoose")
 
@@ -15,11 +14,18 @@ module.exports = class {
     }
     static async get_account_by_id(req, res) {
         const result = await accounts.findById(req.params.id)
-        res.status(200).json({
-            ok: true,
-            account: result,
-            message: `${req.params.id} account details sent.`
-        })
+        if(result){
+            res.status(200).json({
+                ok: true,
+                account: result,
+                message: `${req.params.id} account details sent.`
+            })
+        }else{
+            res.status(403).json({
+                ok: false,
+                message: `${req.params.id} account doesn't exist.`
+            })
+        }
     }
     static async create_account(req, res) {
         const { user_id } = req.cookies;
@@ -32,7 +38,7 @@ module.exports = class {
                 currency,
                 description
             })
-    
+
             res.status(201).json({
                 ok: true,
                 created,
@@ -68,10 +74,17 @@ module.exports = class {
     }
     static async delete_account(req, res) {
         const deleted = await accounts.findByIdAndDelete(req.params.id)
-        res.status(200).json({
-            ok: true,
-            deleted,
-            message: `${req.params.id} account has been deleted`
-        })
+        if (deleted) {
+            res.status(200).json({
+                ok: true,
+                deleted,
+                message: `${req.params.id} account has been deleted`
+            })
+        } else {
+            res.status(200).json({
+                ok: false,
+                message: `${req.params.id} account doesn't exist!`
+            })
+        }
     }
 }
