@@ -6,18 +6,14 @@ module.exports = class {
             user_id: req.user._id
         })
         res.status(200).json({
-            ok: true,
-            results,
-            message: `All category GET!`
+            results
         })
     }
     static async get_category_by_id(req, res) {
         let result = await categories.findById(req.params.id)
         if(result){
             res.status(200).json({
-                ok: true,
-                result,
-                message: `${req.params.id} category has been requested`
+                result
             })
         }else{
             res.status(403).json({
@@ -27,17 +23,13 @@ module.exports = class {
         }
     }
     static async create_category(req, res) {
-        const { title, type } = req.body;
         try {
             let created = await categories.create({
                 user_id: req.user._id,
-                title,
-                type
+                ...req.body
             })
             res.status(201).json({
-                ok: true,
-                created,
-                message: `${title} category has been created`
+                created
             })
         } catch (error) {
             res.status(403).json({
@@ -47,16 +39,10 @@ module.exports = class {
         }
     }
     static async update_category(req, res) {
-        const { title, type } = req.body;
         try {
-            let created = await categories.findByIdAndUpdate(req.params.id, {
-                title,
-                type
-            })
+            let created = await categories.findByIdAndUpdate(req.params.id, req.body)
             res.status(201).json({
-                ok: true,
-                created,
-                message: `${req.params.id} category has been updated.`
+                created
             })
         } catch (error) {
             res.status(403).json({
@@ -71,8 +57,7 @@ module.exports = class {
             let deleted = await categories.findByIdAndDelete(req.params.id)
             if(deleted){
                 res.status(200).json({
-                    ok: true,
-                    message: `${req.params.id} category has been deleted`
+                    deleted
                 })
             }else{
                 throw new Error("No category found with given id")

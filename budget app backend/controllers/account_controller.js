@@ -7,18 +7,14 @@ module.exports = class {
             user_id: req.user._id
         })
         res.status(200).json({
-            ok: true,
-            accounts: results,
-            message: `All accounts of user (${req.user._id})`
+            accounts: results
         })
     }
     static async get_account_by_id(req, res) {
         const result = await accounts.findById(req.params.id)
         if(result){
             res.status(200).json({
-                ok: true,
-                account: result,
-                message: `${req.params.id} account details sent.`
+                account: result
             })
         }else{
             res.status(403).json({
@@ -29,41 +25,27 @@ module.exports = class {
     }
     static async create_account(req, res) {
         const user_id = req.user._id;
-        const { title, amount, currency, description } = req.body;
         try {
             const created = await accounts.create({
                 user_id: new mongoose.Types.ObjectId(user_id),
-                title,
-                amount,
-                currency,
-                description
+                ...req.body
             })
 
             res.status(201).json({
-                ok: true,
-                created,
-                message: `${title} account has been created.`
+                created
             })
         } catch (error) {
             res.status(403).json({
                 ok: "false",
-                message: `Duplicate entry violation: ${user_id} + ${title}`
+                message: `Duplicate entry violation: ${user_id} + ${req.body.title}`
             })
         }
     }
     static async update_account(req, res) {
-        const { title, amount, currency, description } = req.body;
         try {
-            let updated = await accounts.findByIdAndUpdate(req.params.id, {
-                title,
-                amount,
-                currency,
-                description
-            })
+            let updated = await accounts.findByIdAndUpdate(req.params.id, req.body)
             res.status(200).json({
-                ok: true,
-                updated,
-                message: `${req.params.id} account has been updated.`
+                updated
             })
         } catch (error) {
             res.json({
@@ -76,12 +58,10 @@ module.exports = class {
         const deleted = await accounts.findByIdAndDelete(req.params.id)
         if (deleted) {
             res.status(200).json({
-                ok: true,
-                deleted,
-                message: `${req.params.id} account has been deleted`
+                deleted
             })
         } else {
-            res.status(200).json({
+            res.status(403).json({
                 ok: false,
                 message: `${req.params.id} account doesn't exist!`
             })

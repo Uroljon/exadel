@@ -4,8 +4,7 @@ const supertest = require("supertest");
 describe('app', () => {
  
     describe('POST /auth/login', () => {
-
-        describe('POST: when the request body is valid', () => {
+        describe('when the request body is valid', () => {
             it('given username and password', async () => {
                 const response = await supertest(app)
                     .post('/auth/login')
@@ -19,8 +18,7 @@ describe('app', () => {
                 expect(response.header['content-type']).toBe('application/json; charset=utf-8');
             })
         });
-
-        describe('POST: when the request body is not valid', () => {
+        describe('when the request body is not valid', () => {
             it('invalid email', async () => {
 
                 const response = await supertest(app).post('/auth/login').send({ email: "someone@gmail.com", password: 'Uroljon_admin' });
@@ -30,8 +28,7 @@ describe('app', () => {
                 expect(response.header['content-type']).toBe('application/json; charset=utf-8');
             });
         });
-
-        describe('POST: when the request body is not valid', () => {
+        describe('when the request body is not valid', () => {
             it('invalid password', async () => {
 
                 const response = await supertest(app).post('/auth/login').send({ email: "uroljon@exadel.com", password: 'guest' });
