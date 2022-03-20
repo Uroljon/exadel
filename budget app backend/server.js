@@ -1,4 +1,4 @@
-const { PORT, JWT_SECRET } = require("./config");
+const { PORT } = require("./config");
 const express = require("express");
 const app = express()
 const fs = require("fs")
@@ -10,11 +10,11 @@ const mongo_connect = require("./modules/mongo");
 mongo_connect()
 
 // middlewares
-app.use(express.json()); //to parse body's json
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(passport.initialize())
-// const cookie_parser = require("cookie-parser")
-// app.use(cookie_parser()) //to work with jwt in Cookie
+const cookie_parser = require("cookie-parser")
+app.use(cookie_parser())
 
 passport.use(jwtStrategy)
 let auth = passport.authenticate("jwt", {session: false})
