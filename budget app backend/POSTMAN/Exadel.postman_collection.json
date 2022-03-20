@@ -35,7 +35,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"uroljon@exadel.com\",\r\n    \"password\": \"Uroljon_admin\"\r\n}",
+							"raw": "{\r\n    \"email\": \"Uroljon@exadel.com\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -57,29 +57,6 @@
 					},
 					"response": []
 				}
-			],
-			"auth": {
-				"type": "noauth"
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
 			]
 		},
 		{
@@ -92,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Humans VISA\",\r\n    \"currency\": \"USD\",\r\n    \"amount\": 5000,\r\n    \"description\": \"My freelancing transactions\"\r\n}",
+							"raw": "{\r\n    \"title\": \"University expanses\",\r\n    \"currency\": \"UZS\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -120,7 +97,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/account/6236b60a34f484b1aca8a8a3",
+							"raw": "http://localhost:8080/account/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -128,7 +105,7 @@
 							"port": "8080",
 							"path": [
 								"account",
-								"6236b60a34f484b1aca8a8a3"
+								"123_id"
 							]
 						}
 					},
@@ -161,7 +138,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Humo\",\r\n    \"currency\": \"USD\",\r\n    \"amount\": 700,\r\n    \"description\": \"for university transactions\"\r\n}",
+							"raw": "{\r\n    \"currency\": \"USD\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -169,7 +146,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/account/6236b60a34f484b1aca8a8a3",
+							"raw": "http://localhost:8080/account/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -177,7 +154,7 @@
 							"port": "8080",
 							"path": [
 								"account",
-								"6236b60a34f484b1aca8a8a3"
+								"123_id"
 							]
 						}
 					},
@@ -189,7 +166,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/account/6236b60a34f484b1aca8a8a3",
+							"raw": "http://localhost:8080/account/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -197,7 +174,7 @@
 							"port": "8080",
 							"path": [
 								"account",
-								"6236b60a34f484b1aca8a8a3"
+								"123_id"
 							]
 						}
 					},
@@ -215,7 +192,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"income 1\",\r\n    \"amount\": 50,\r\n    \"description\": \"freelance website development may 2022\", \r\n    \"payer\": \"MinTourismUz\", \r\n    \"pay_day\": 15, \r\n    \"category_id\": \"6236b909138e85ec1f3ca9a3\", \r\n    \"account_id\": \"6236b66d34f484b1aca8a8ae\"\r\n}",
+							"raw": "{\r\n    \"title\": \"income 1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -244,7 +221,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"income 2\",\r\n    \"amount\": 50,\r\n    \"description\": \"freelance website development june 2022\", \r\n    \"payer\": \"MinTourismUz\", \r\n    \"pay_day\": 15, \r\n    \"category_id\": \"6236b909138e85ec1f3ca9a3\", \r\n    \"account_id\": \"6236b66d34f484b1aca8a8ae\"\r\n}",
+							"raw": "{\r\n    \"title\": \"incomeTitleUpdated\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -252,7 +229,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/income/6236b953138e85ec1f3ca9a9",
+							"raw": "http://localhost:8080/income/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -260,7 +237,7 @@
 							"port": "8080",
 							"path": [
 								"income",
-								"6236b953138e85ec1f3ca9a9"
+								"123_id"
 							]
 						}
 					},
@@ -272,7 +249,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/income/6236b953138e85ec1f3ca9a9",
+							"raw": "http://localhost:8080/income/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -280,7 +257,7 @@
 							"port": "8080",
 							"path": [
 								"income",
-								"6236b953138e85ec1f3ca9a9"
+								"123_id"
 							]
 						}
 					},
@@ -288,34 +265,11 @@
 				},
 				{
 					"name": "GET all income",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"account_id\": \"6236b66d34f484b1aca8a8ae\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://localhost:8080/income/all",
+							"raw": "http://localhost:8080/income/al",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -323,7 +277,7 @@
 							"port": "8080",
 							"path": [
 								"income",
-								"all"
+								"al"
 							]
 						}
 					},
@@ -335,7 +289,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/income/6236b953138e85ec1f3ca9a9",
+							"raw": "http://localhost:8080/income/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -343,7 +297,7 @@
 							"port": "8080",
 							"path": [
 								"income",
-								"6236b953138e85ec1f3ca9a9"
+								"123_id"
 							]
 						}
 					},
@@ -360,7 +314,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/expanse/6236bf9943fa3fd6c51b31ba",
+							"raw": "http://localhost:8080/expanse/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -368,7 +322,7 @@
 							"port": "8080",
 							"path": [
 								"expanse",
-								"6236bf9943fa3fd6c51b31ba"
+								"123_id"
 							]
 						}
 					},
@@ -376,21 +330,9 @@
 				},
 				{
 					"name": "GET all expanses",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"account_id\": \"6236b66d34f484b1aca8a8ae\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://localhost:8080/expanse/all",
 							"protocol": "http",
@@ -413,7 +355,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"movie | spiderma-2\",\r\n    \"amount\": 50,\r\n    \"description\": \"watching a movie with Emma\", \r\n    \"payer\": \"Uroljon Khidirboev\", \r\n    \"pay_day\": 5, \r\n    \"category_id\": \"6236b70934f484b1aca8a8b9\", \r\n    \"account_id\": \"6236b66d34f484b1aca8a8ae\"\r\n}",
+							"raw": "{\r\n    \"title\": \"newExpanseUpdated\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -421,7 +363,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/expanse/6236bf9943fa3fd6c51b31ba",
+							"raw": "http://localhost:8080/expanse/123_d",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -429,7 +371,7 @@
 							"port": "8080",
 							"path": [
 								"expanse",
-								"6236bf9943fa3fd6c51b31ba"
+								"123_d"
 							]
 						}
 					},
@@ -441,7 +383,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/expanse/6236c1398c9d026531376aa9",
+							"raw": "http://localhost:8080/expanse/123_d",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -449,7 +391,7 @@
 							"port": "8080",
 							"path": [
 								"expanse",
-								"6236c1398c9d026531376aa9"
+								"123_d"
 							]
 						}
 					},
@@ -462,7 +404,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"test\",\r\n    \"amount\": 10,\r\n    \"description\": \"this is for testing\", \r\n    \"payer\": \"Uroljon Khidirboev\", \r\n    \"pay_day\": 5, \r\n    \"category_id\": \"6236b70934f484b1aca8a8b9\", \r\n    \"account_id\": \"6236b66d34f484b1aca8a8ae\"\r\n}",
+							"raw": "{\r\n    \"title\": \"expanse_1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -496,7 +438,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"freelancing\",\r\n    \"type\": \"income\"\r\n}",
+							"raw": "{\r\n    \"title\": \"daily\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -519,12 +461,12 @@
 					"response": []
 				},
 				{
-					"name": "DELETE category",
+					"name": "delete category",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/category/6236b75834f484b1aca8a8c7",
+							"raw": "http://localhost:8080/category/daily",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -532,7 +474,7 @@
 							"port": "8080",
 							"path": [
 								"category",
-								"6236b75834f484b1aca8a8c7"
+								"daily"
 							]
 						}
 					},
@@ -544,7 +486,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/category/6236b70934f484b1aca8a8b9",
+							"raw": "http://localhost:8080/category/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -552,7 +494,7 @@
 							"port": "8080",
 							"path": [
 								"category",
-								"6236b70934f484b1aca8a8b9"
+								"123_id"
 							]
 						}
 					},
@@ -585,7 +527,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"entertainment\",\r\n    \"type\": \"expanse\"\r\n}",
+							"raw": "{\r\n    \"title\": \"newUpdatedCategory\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -593,7 +535,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/category/6236b70934f484b1aca8a8b9",
+							"raw": "http://localhost:8080/category/123_id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -601,7 +543,7 @@
 							"port": "8080",
 							"path": [
 								"category",
-								"6236b70934f484b1aca8a8b9"
+								"123_id"
 							]
 						}
 					},
@@ -731,36 +673,6 @@
 					"response": []
 				}
 			]
-		}
-	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIzNjExMTBiNjFkMWY5MzUwNDE4MjZmIiwiZW1haWwiOiJ1cm9sam9uQGV4YWRlbC5jb20iLCJyb2xlIjoib3duZXIiLCJpYXQiOjE2NDc3NTE5OTZ9.cC1GEVCkFOW70HiaT4NJhcw0GxW5_lkJzObW5HzgDbg",
-				"type": "string"
-			}
-		]
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
 		}
 	]
 }

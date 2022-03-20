@@ -18,7 +18,36 @@ const userSchema = new mongoose.Schema({
     },
     country: {
         type: String
-    }
+    },
+    accounts: {
+        id: {
+            type: mongoose.ObjectId
+        },
+        title: {
+            type: String
+        },
+        amount: {
+            type: Number,
+            default: 0
+        },
+        currency: {
+            type: String
+        },
+        description: {
+            type: String 
+        }
+    },
+    categories: {
+        id: {
+            type: mongoose.ObjectId
+        },
+        title: {
+            type: String
+        },
+        type: {
+            type: String
+        }
+    }   
 }, {
     timestamps: true
 });
