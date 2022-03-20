@@ -30,10 +30,10 @@ module.exports = class {
     static logout(req, res) {//this route doesn't work mainly because I didn't implement cookies
         // if (req.cookies.auth) {
         //     // res.clearCookie("auth") // remove cookie to break session
-        //     res.status(200).json({
-        //         ok: true,
-        //         message: `User logged out!`
-        //     })
+            res.status(200).json({
+                ok: true,
+                message: `User logged out!`
+            })
         // } else {
         //     res.status(403).json({
         //         ok: false,
