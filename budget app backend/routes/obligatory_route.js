@@ -1,5 +1,4 @@
 const { create_obligatory, get_obligatory_by_id, update_obligatory, delete_obligatory, get_all_obligatories } = require("../controllers/obligatory_controller");
-
 const router = require("express").Router();
 
 // CRUD category
