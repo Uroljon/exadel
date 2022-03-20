@@ -27,6 +27,6 @@ const subscriptionSchema = new mongoose.Schema({
     timestamps: true
 });
 subscriptionSchema.post("save", function (doc) {
-    console.log(`${doc.title} has been saved`)
+    console.log(`${doc.email} has been saved`)
 })
-module.exports = mongoose.model("Subscriptions", subscriptionSchema)
+module.exports = mongoose.model("Users", subscriptionSchema)

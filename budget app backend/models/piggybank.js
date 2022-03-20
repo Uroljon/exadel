@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const piggyBankSchema = new mongoose.Schema({
     title: {
         type: String, // check uniqueness within creation
-        required: true
+        required: true 
     },
     goal: {
         type: Number,
@@ -20,6 +20,6 @@ const piggyBankSchema = new mongoose.Schema({
     timestamps: true
 });
 piggyBankSchema.post("save", function (doc) {
-    console.log(`${doc.title} has been saved`)
+    console.log(`${doc.email} has been saved`)
 })
-module.exports = mongoose.model("Piggybank", piggyBankSchema)
+module.exports = mongoose.model("Users", piggyBankSchema)

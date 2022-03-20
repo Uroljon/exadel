@@ -1,11 +1,12 @@
 module.exports = function (req, res, next) {
-    // check whether user has admin rights
-    if(req.user.role !== "admin" && req.user.role !== "owner"){
+    // check whether user has admin token on its cookie
+    let users = require("../mock_data/users.js")
+    console.log(req.headers)
+    if(false){
         res.json({
             ok: false,
-            message: "You need to be an admin or owner!"
+            message: "You need to be an admin"
         })
-    }else{
-        next()
     }
+    // next()
 }

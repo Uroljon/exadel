@@ -11,9 +11,6 @@ const transactionSchema = new mongoose.Schema({
     description: {
         type: String 
     },
-    payer: {
-        type: String
-    },
     type: {
         type: String 
     },
@@ -26,6 +23,6 @@ const transactionSchema = new mongoose.Schema({
     timestamps: true
 });
 transactionSchema.post("save", function (doc) {
-    console.log(`${doc.title} has been saved`)
+    console.log(`${doc.email} has been saved`)
 })
-module.exports = mongoose.model("Transactions", transactionSchema)
+module.exports = mongoose.model("Users", transactionSchema)
