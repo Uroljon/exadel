@@ -22,4 +22,4 @@ const piggyBankSchema = new mongoose.Schema({
 piggyBankSchema.post("save", function (doc) {
     console.log(`${doc.title} has been saved`)
 })
-module.exports = mongoose.model("Piggybank", piggyBankSchema)
+module.exports = mongoose.model("Piggybank", piggyBankSchema) 
