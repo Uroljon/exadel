@@ -17,7 +17,7 @@ const categorySchema = new mongoose.Schema({
 categorySchema.index({ user_id: 1, title: 1}, { unique: true });
 
 categorySchema.post("save", function (doc) {
-    console.log(`${doc.email} has been saved`)
+    console.log(`${doc.title} has been saved`)
 })
 
 module.exports = mongoose.model("Categories", categorySchema)

@@ -4,12 +4,12 @@ const mongoose = require("mongoose")
 module.exports = class {
     static async get_all_accounts(req, res) {
         const results = await accounts.find({
-            user_id: req.cookies.user_id
+            user_id: req.user._id
         })
         res.status(200).json({
             ok: true,
             accounts: results,
-            message: `All accounts of user (${req.cookies.user_id})`
+            message: `All accounts of user (${req.user._id})`
         })
     }
     static async get_account_by_id(req, res) {
@@ -28,7 +28,7 @@ module.exports = class {
         }
     }
     static async create_account(req, res) {
-        const { user_id } = req.cookies;
+        const user_id = req.user._id;
         const { title, amount, currency, description } = req.body;
         try {
             const created = await accounts.create({

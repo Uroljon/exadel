@@ -3,7 +3,7 @@ const categories = require("../models/categories");
 module.exports = class {
     static async get_all_categories(req, res) {
         let results = await categories.find({
-            user_id: req.cookies.user_id
+            user_id: req.user._id
         })
         res.status(200).json({
             ok: true,
@@ -30,7 +30,7 @@ module.exports = class {
         const { title, type } = req.body;
         try {
             let created = await categories.create({
-                user_id: req.cookies.user_id,
+                user_id: req.user._id,
                 title,
                 type
             })

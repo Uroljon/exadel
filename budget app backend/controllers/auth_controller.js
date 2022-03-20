@@ -16,7 +16,6 @@ module.exports = class {
                 role: user.role,
             })
             // res.cookie("auth", token) //I'm not setting jwt token to cookie
-            res.cookie("user_id", user._id) //I'm not setting jwt token to cookie
             res.status(201).json({
                 ok: true,
                 token
